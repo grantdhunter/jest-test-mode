@@ -133,8 +133,7 @@ Runs the provided FORM with `default-directory` bound."
 (defmacro jest-test-with-debug-flags (form)
   "Execute FORM with debugger flags set."
   (declare (indent 0))
-  `(let ((jest-test-options (seq-concatenate 'list jest-test-options (list "--runInBand") ))
-         (jest-test-npx-options (seq-concatenate 'list jest-test-npx-options (list "--node-arg" "inspect"))))
+  `(let ((jest-test-options (seq-concatenate 'list jest-test-options (list "--runInBand") )))
      ,form))
 
 (defun jest-test-project-root (filename)
